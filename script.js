@@ -1,6 +1,4 @@
-// Функция проверки (теперь точно сработает)
 function checkAccount() {
-    console.log("Кнопка нажата!"); // Для проверки в консоли
     const nick = document.getElementById('nickname').value;
     const res = document.getElementById('check-result');
     
@@ -10,26 +8,21 @@ function checkAccount() {
         return;
     }
     
-    res.innerHTML = "🔍 Проверка совместимости...";
+    res.innerHTML = "🔍 Проверка...";
     res.style.color = "#00d2ff";
     
     setTimeout(() => {
-        res.innerHTML = `✅ Аккаунт <strong>${nick}</strong> подходит!`;
+        res.innerHTML = `✅ Аккаунт ${nick} подходит!`;
         res.style.color = "#00ff88";
-    }, 1500);
+    }, 1000);
 }
 
-// Анимация появления при скролле
-function reveal() {
-    const reveals = document.querySelectorAll(".reveal");
-    reveals.forEach(el => {
-        const windowHeight = window.innerHeight;
-        const elementTop = el.getBoundingClientRect().top;
-        if (elementTop < windowHeight - 50) {
-            el.classList.add("active");
-        }
-    });
-}
-
-window.addEventListener("scroll", reveal);
-window.onload = reveal; // Чтобы первый экран сразу появился
+// Уведомления
+setInterval(() => {
+    const container = document.getElementById('notification-container');
+    const toast = document.createElement('div');
+    toast.className = 'notification';
+    toast.innerHTML = `🛒 Кто-то купил Cookies!`;
+    container.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+}, 10000);
