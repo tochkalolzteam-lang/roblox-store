@@ -1,28 +1,10 @@
-function checkAccount() {
-    const nick = document.getElementById('nickname').value;
-    const res = document.getElementById('check-result');
-    
-    if (!nick.trim()) {
-        res.innerHTML = "❌ Введите ник!";
-        res.style.color = "#ff4d4d";
-        return;
-    }
-    
-    res.innerHTML = "🔍 Проверка...";
-    res.style.color = "#00d2ff";
-    
+function runCheck() {
+    const n = document.getElementById('nick').value;
+    const o = document.getElementById('out');
+    if(!n) { o.innerText = "Введите ник!"; o.style.color = "red"; return; }
+    o.innerText = "Проверка...";
     setTimeout(() => {
-        res.innerHTML = `✅ Аккаунт ${nick} подходит!`;
-        res.style.color = "#00ff88";
+        o.innerText = "✅ Аккаунт совместим!";
+        o.style.color = "#00ff88";
     }, 1000);
 }
-
-// Уведомления
-setInterval(() => {
-    const container = document.getElementById('notification-container');
-    const toast = document.createElement('div');
-    toast.className = 'notification';
-    toast.innerHTML = `🛒 Кто-то купил Cookies!`;
-    container.appendChild(toast);
-    setTimeout(() => toast.remove(), 3000);
-}, 10000);
