@@ -1,291 +1,53 @@
-/* Общие настройки */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0f0c29;
+    margin: 0; padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #050510;
     color: white;
-    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Шапка */
-header {
-    height: 80px;
-    display: flex;
-    align-items: center;
-    background: rgba(15, 12, 41, 0.9);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.logo span {
-    color: #00d2ff;
-}
-
-.btn-header {
-    background: #00d2ff;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn-header:hover {
-    background: #3a7bd5;
-    box-shadow: 0 0 15px #00d2ff;
-}
-
-/* Главный блок */
-.hero {
-    height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: linear-gradient(to bottom, #24243e, #0f0c29);
-}
-
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-
-.btn-main {
-    display: inline-block;
-    margin-top: 30px;
-    color: white;
-    text-decoration: none;
-    border: 2px solid #00d2ff;
-    padding: 12px 30px;
-    border-radius: 30px;
-    transition: 0.3s;
-}
-
-.btn-main:hover {
-    background: #00d2ff;
-}
-
-/* Сетка преимуществ */
-.benefits {
-    padding: 80px 0;
-}
-
-.benefits h2 {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.card {
-    background: #1a1a2e;
-    padding: 30px;
-    border-radius: 15px;
-    border: 1px solid #333;
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    border-color: #00d2ff;
-}
-
-footer {
-    text-align: center;
-    padding: 40px 0;
-    font-size: 14px;
-    color: #666;
-}
-#notification-container {
+#particles-js {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 9999;
+    width: 100%; height: 100%;
+    z-index: -1;
 }
 
-.notification {
-    background: rgba(26, 26, 46, 0.95);
-    border-left: 4px solid #00d2ff;
-    color: white;
-    padding: 15px 25px;
-    margin-top: 10px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    animation: slideIn 0.5s ease-out forwards;
-    font-size: 14px;
-}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-@keyframes slideIn {
-    from { transform: translateX(100%); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
+/* Анимация появления */
+.reveal { opacity: 0; transform: translateY(30px); transition: 0.8s; }
+.reveal.active { opacity: 1; transform: translateY(0); }
 
-.notification.fade-out {
-    animation: slideOut 0.5s ease-in forwards;
+/* Header & Hero (прежние стили) */
+header { background: rgba(5, 5, 16, 0.9); height: 80px; display: flex; align-items: center; position: sticky; top: 0; z-index: 100; }
+.logo span { color: #00d2ff; }
+.btn-header, .btn-main, .btn-buy { 
+    background: #00d2ff; color: #000; text-decoration: none; 
+    padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: 0.3s;
+    border: none; cursor: pointer;
 }
+.btn-main { background: transparent; border: 2px solid #00d2ff; color: #fff; border-radius: 30px; }
 
-@keyframes slideOut {
-    from { transform: translateX(0); opacity: 1; }
-    to { transform: translateX(100%); opacity: 0; }
-}
-/* Секция цен */
-.prices {
-    padding: 80px 0;
-    background: #0b0920;
-}
+.hero { text-align: center; padding: 100px 0; }
+.stock-status { border: 1px solid #00d2ff; padding: 10px; border-radius: 20px; font-size: 14px; }
+.dot { height: 10px; width: 10px; background: #00ff88; border-radius: 50%; display: inline-block; margin-right: 5px; box-shadow: 0 0 10px #00ff88; }
 
-.price-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
+/* Checker */
+.checker { padding: 40px 0; text-align: center; }
+.check-box { background: #1a1a2e; padding: 30px; border-radius: 20px; border: 1px dashed #00d2ff; }
+input { padding: 10px; border-radius: 5px; border: none; margin-right: 10px; width: 200px; }
+#check-result { margin-top: 15px; font-weight: bold; }
 
-.price-item {
-    background: #1a1a2e;
-    border: 1px solid #333;
-    border-radius: 20px;
-    padding: 40px 30px;
-    text-align: center;
-    width: 280px;
-    transition: 0.4s;
-    position: relative;
-}
+/* Prices & FAQ */
+.prices, .faq { padding: 80px 0; }
+.price-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+.price-item { background: #1a1a2e; padding: 30px; border-radius: 20px; width: 250px; text-align: center; }
+.featured { border: 2px solid #00d2ff; }
 
-.price-item:hover {
-    border-color: #00d2ff;
-    box-shadow: 0 0 30px rgba(0, 210, 255, 0.2);
-}
+.faq-item { background: #1a1a2e; margin-bottom: 10px; padding: 20px; border-radius: 10px; }
+.faq-question { color: #00d2ff; font-weight: bold; }
+.faq-answer { font-size: 14px; color: #ccc; margin-top: 10px; }
 
-.price-item.featured {
-    border-color: #00d2ff;
-    transform: scale(1.05);
-    background: #1e1e3a;
-}
-
-.badge {
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #00d2ff;
-    color: #000;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.package-name {
-    font-size: 18px;
-    color: #aaa;
-    margin-bottom: 10px;
-}
-
-.amount {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #fff;
-}
-
-.cost {
-    font-size: 24px;
-    color: #00d2ff;
-    margin-bottom: 25px;
-}
-
-.btn-buy {
-    display: block;
-    background: transparent;
-    border: 2px solid #00d2ff;
-    color: #fff;
-    padding: 10px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn-buy:hover {
-    background: #00d2ff;
-    color: #000;
-
-}
-/* Счетчик наличия */
-.stock-status {
-    margin: 20px 0;
-    background: rgba(0, 210, 255, 0.1);
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 50px;
-    border: 1px solid #00d2ff;
-    font-size: 14px;
-}
-
-.dot {
-    height: 10px;
-    width: 10px;
-    background-color: #00ff88;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 8px;
-    box-shadow: 0 0 10px #00ff88;
-    animation: blink 1.5s infinite;
-}
-
-@keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0.3; }
-    100% { opacity: 1; }
-}
-
-/* Стили отзывов */
-.reviews { padding: 80px 0; background: #0f0c29; }
-.review-card { text-align: left; position: relative; }
-.stars { color: #ffcc00; margin-bottom: 10px; font-size: 18px; }
-.author { display: block; margin-top: 15px; color: #00d2ff; font-weight: bold; }
-
-/* Текстура на фоне (опционально) */
-body {
-    background-image: radial-gradient(circle at 50% 50%, #1a1a3a 0%, #0f0c29 100%);
-}
-/* Начальное состояние блоков для анимации */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-}
-
-/* Состояние после появления */
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
+/* Notifications */
+.notification { position: fixed; bottom: 20px; right: 20px; background: #1a1a2e; border-left: 4px solid #00d2ff; padding: 15px; border-radius: 5px; animation: slideIn 0.5s; }
+@keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
