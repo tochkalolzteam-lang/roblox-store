@@ -1,70 +1,43 @@
-// Данные для имитации активности
-const names = ['Dmitry', 'Ivan', 'Roblox_King', 'CookieMonster', 'User_77', 'MegaGamer'];
-const amounts = ['100', '500', '1000', '2500', '5000'];
+// Анимация прокрутки
+function reveal() {
+    let reveals = document.querySelectorAll(".reveal");
+    reveals.forEach(el => {
+        let windowHeight = window.innerHeight;
+        let elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) el.classList.add("active");
+    });
+}
+window.addEventListener("scroll", reveal);
+reveal();
 
-function showNotification() {
+// Проверка аккаунта (имитация)
+function checkAccount() {
+    const nick = document.getElementById('nickname').value;
+    const res = document.getElementById('check-result');
+    if (!nick) { res.innerHTML = "Введите ник!"; return; }
+    
+    res.innerHTML = "🔍 Проверяем аккаунт...";
+    setTimeout(() => {
+        res.innerHTML = `✅ Аккаунт <strong>${nick}</strong> совместим! Скидка 5% применена в боте.`;
+        res.style.color = "#00ff88";
+    }, 2000);
+}
+
+// Счетчик остатков
+let currentStock = 48250;
+setInterval(() => {
+    currentStock -= Math.floor(Math.random() * 3);
+    document.getElementById('cookie-count').innerText = currentStock.toLocaleString();
+}, 7000);
+
+// Уведомления о покупках
+const names = ['Dmitry', 'Ivan', 'Roblox_Fan', 'Gamer777', 'Stas'];
+function showNotif() {
     const container = document.getElementById('notification-container');
-    
-    // Генерируем случайные данные
-    const randomName = names[Math.floor(Math.random() * names.length)];
-    const randomAmount = amounts[Math.floor(Math.random() * amounts.length)];
-    
-    // Создаем элемент уведомления
     const toast = document.createElement('div');
     toast.className = 'notification';
-    toast.innerHTML = `<strong>${randomName}</strong> купил 🍪 <strong>${randomAmount} Cookies</strong>`;
-    
+    toast.innerHTML = `🛒 <strong>${names[Math.floor(Math.random()*names.length)]}</strong> купил Cookies!`;
     container.appendChild(toast);
-    
-    // Удаляем уведомление через 4 секунды
-    setTimeout(() => {
-        toast.classList.add('fade-out');
-        setTimeout(() => toast.remove(), 500);
-    }, 4000);
+    setTimeout(() => toast.remove(), 4000);
 }
-
-// Запускаем появление уведомлений каждые 7-12 секунд
-function startNotifications() {
-    const randomDelay = Math.floor(Math.random() * (12000 - 7000) + 7000);
-    setTimeout(() => {
-        showNotification();
-        startNotifications();
-    }, randomDelay);
-}
-
-// Запуск через 3 секунды после загрузки сайта
-
-setTimeout(startNotifications, 3000);
-// Функция для живого изменения счетчика остатков
-function updateStock() {
-    const stockElement = document.getElementById('cookie-count');
-    let currentStock = parseInt(stockElement.innerText.replace(',', ''));
-    
-    // Случайным образом уменьшаем число (имитация продаж)
-    setInterval(() => {
-        const sale = Math.floor(Math.random() * 5);
-        if (currentStock > 100) {
-            currentStock -= sale;
-            stockElement.innerText = currentStock.toLocaleString();
-        }
-    }, 5000);
-}
-
-updateStock();
-
-function reveal() {
-    var reveals = document.querySelectorAll(".reveal");
-    for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var elementTop = reveals[i].getBoundingClientRect().top;
-        var elementVisible = 150;
-        if (elementTop < windowHeight - elementVisible) {
-            reveals[i].classList.add("active");
-        }
-    }
-}
-
-window.addEventListener("scroll", reveal);
-
-// Запускаем один раз при загрузке, чтобы проверить первый экран
-reveal();
+setInterval(showNotif, 10000);
