@@ -8,55 +8,49 @@
 </head>
 <body>
 
-    <header>
-        <div class="container header-flex">
-            <div class="logo">Roblox <span>Cookies</span></div>
-            <a href="https://t.me/your_bot" class="btn-buy">В магазин (TG)</a>
+    <header class="navbar">
+        <div class="container flex-sb">
+            <div class="logo">ROBLOX <span>COOKIES</span></div>
+            <a href="https://t.me/your_bot" class="btn">ТЕЛЕГРАМ</a>
         </div>
     </header>
 
-    <main class="container">
-        <section class="hero">
-            <h1>Лучшие Cookies для вашего аккаунта</h1>
-            <p>Быстро, безопасно и выгодно.</p>
-            <div class="stock-status">В наличии: <strong id="cookie-count">48,250</strong> шт.</div>
+    <div class="container">
+        <section class="hero-box">
+            <h1>Магазин лучших Cookies</h1>
+            <p>Надежно. Быстро. Дешево.</p>
+            <div class="stock-info">В наличии: <span id="count">48,250</span> шт.</div>
         </section>
 
-        <section class="checker-section">
-            <div class="check-box">
-                <h3>Проверка на совместимость</h3>
-                <div class="input-group">
-                    <input type="text" id="nickname" placeholder="Ваш ник">
-                    <button onclick="checkAccount()" class="btn-buy">Проверить</button>
-                </div>
-                <div id="check-result"></div>
+        <section class="main-card">
+            <h3>Проверить аккаунт</h3>
+            <div class="search-bar">
+                <input type="text" id="nick" placeholder="Ваш ник...">
+                <button onclick="runCheck()" class="btn">ТЕСТ</button>
             </div>
+            <p id="out"></p>
         </section>
 
-        <section class="price-grid">
-            <div class="price-item">
-                <h4>Новичок</h4>
-                <div class="price-val">500 шт.</div>
-                <div class="price-cost">99 ₽</div>
-                <a href="#" class="btn-buy">Купить</a>
+        <div class="price-row">
+            <div class="p-card">
+                <h4>500 шт.</h4>
+                <div class="price">99 ₽</div>
+                <a href="#" class="btn-small">КУПИТЬ</a>
             </div>
-            <div class="price-item featured">
-                <div class="badge">ТОП</div>
-                <h4>Геймер</h4>
-                <div class="price-val">2,500 шт.</div>
-                <div class="price-cost">450 ₽</div>
-                <a href="#" class="btn-buy">Купить</a>
+            <div class="p-card hot">
+                <div class="label">ХИТ</div>
+                <h4>2,500 шт.</h4>
+                <div class="price">450 ₽</div>
+                <a href="#" class="btn-small">КУПИТЬ</a>
             </div>
-            <div class="price-item">
-                <h4>Магнат</h4>
-                <div class="price-val">10,000 шт.</div>
-                <div class="price-cost">1,600 ₽</div>
-                <a href="#" class="btn-buy">Купить</a>
+            <div class="p-card">
+                <h4>10,000 шт.</h4>
+                <div class="price">1,600 ₽</div>
+                <a href="#" class="btn-small">КУПИТЬ</a>
             </div>
-        </section>
-    </main>
+        </div>
+    </div>
 
-    <div id="notification-container"></div>
     <script src="script.js"></script>
 </body>
 </html>
