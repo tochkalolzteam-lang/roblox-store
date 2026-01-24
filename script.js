@@ -33,4 +33,21 @@ function startNotifications() {
 }
 
 // Запуск через 3 секунды после загрузки сайта
+
 setTimeout(startNotifications, 3000);
+// Функция для живого изменения счетчика остатков
+function updateStock() {
+    const stockElement = document.getElementById('cookie-count');
+    let currentStock = parseInt(stockElement.innerText.replace(',', ''));
+    
+    // Случайным образом уменьшаем число (имитация продаж)
+    setInterval(() => {
+        const sale = Math.floor(Math.random() * 5);
+        if (currentStock > 100) {
+            currentStock -= sale;
+            stockElement.innerText = currentStock.toLocaleString();
+        }
+    }, 5000);
+}
+
+updateStock();
