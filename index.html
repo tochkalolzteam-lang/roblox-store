@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roblox Cookies Store — Максимальный уровень</title>
+    <title>Roblox Cookies Store — Официальный магазин</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="particles-js"></div>
 
     <header>
         <div class="container">
@@ -32,8 +31,10 @@
         <div class="container">
             <div class="check-box reveal">
                 <h3>Проверь свой аккаунт на совместимость</h3>
-                <input type="text" id="nickname" placeholder="Введите ваш ник в Roblox">
-                <button onclick="checkAccount()" class="btn-buy">Проверить</button>
+                <div class="input-group">
+                    <input type="text" id="nickname" placeholder="Введите ваш ник в Roblox">
+                    <button onclick="checkAccount()" class="btn-buy">Проверить</button>
+                </div>
                 <div id="check-result"></div>
             </div>
         </div>
@@ -41,7 +42,7 @@
 
     <section id="prices" class="prices">
         <div class="container">
-            <h2>Наши Тарифы</h2>
+            <h2 class="section-title">Наши Тарифы</h2>
             <div class="price-grid">
                 <div class="price-item reveal">
                     <div class="package-name">Набор "Новичок"</div>
@@ -68,14 +69,16 @@
 
     <section class="faq">
         <div class="container">
-            <h2>Часто задаваемые вопросы</h2>
-            <div class="faq-item reveal">
-                <div class="faq-question">Как быстро я получу товар?</div>
-                <div class="faq-answer">После оплаты в боте, ссылка на Cookies выдается моментально в автоматическом режиме.</div>
-            </div>
-            <div class="faq-item reveal">
-                <div class="faq-question">Это безопасно для моего аккаунта?</div>
-                <div class="faq-answer">Да, мы используем только чистые методы получения, что минимизирует любые риски.</div>
+            <h2 class="section-title">Часто задаваемые вопросы</h2>
+            <div class="faq-list">
+                <div class="faq-item reveal">
+                    <div class="faq-question">Как быстро я получу товар?</div>
+                    <div class="faq-answer">После оплаты в боте, ссылка на Cookies выдается моментально в автоматическом режиме.</div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">Это безопасно для моего аккаунта?</div>
+                    <div class="faq-answer">Да, мы используем только чистые методы получения, что минимизирует риски.</div>
+                </div>
             </div>
         </div>
     </section>
