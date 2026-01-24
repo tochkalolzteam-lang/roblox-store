@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roblox Cookies Store — Лучший выбор</title>
+    <title>Roblox Cookies Store — Максимальный уровень</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="particles-js"></div>
 
     <header>
         <div class="container">
@@ -19,36 +20,21 @@
         <div class="container">
             <h1>Лучшие Cookies для вашего аккаунта</h1>
             <p>Быстро, безопасно и по самым выгодным ценам.</p>
-            
             <div class="stock-status">
                 <span class="dot"></span> В наличии: <strong id="cookie-count">48,250</strong> шт.
             </div>
-            
             <br>
             <a href="#prices" class="btn-main">Посмотреть цены</a>
         </div>
     </section>
 
-    <section id="benefits" class="benefits">
+    <section class="checker">
         <div class="container">
-            <h2>Почему выбирают нас?</h2>
-            <div class="grid">
-                <div class="card reveal">
-                    <h3>⚡ Мгновенная выдача</h3>
-                    <p>Товар приходит автоматически сразу после оплаты. Никаких ожиданий!</p>
-                </div>
-                <div class="card reveal">
-                    <h3>🛡️ Полная безопасность</h3>
-                    <p>Мы гарантируем чистоту каждого товара и защиту ваших данных.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>💎 Низкие цены</h3>
-                    <p>Постоянно мониторим рынок, чтобы предложить вам лучший прайс.</p>
-                </div>
-                <div class="card reveal">
-                    <h3>💬 Поддержка 24/7</h3>
-                    <p>Наши операторы всегда на связи и готовы помочь с любым вопросом.</p>
-                </div>
+            <div class="check-box reveal">
+                <h3>Проверь свой аккаунт на совместимость</h3>
+                <input type="text" id="nickname" placeholder="Введите ваш ник в Roblox">
+                <button onclick="checkAccount()" class="btn-buy">Проверить</button>
+                <div id="check-result"></div>
             </div>
         </div>
     </section>
@@ -80,25 +66,16 @@
         </div>
     </section>
 
-    <section class="reviews">
+    <section class="faq">
         <div class="container">
-            <h2>Отзывы покупателей</h2>
-            <div class="grid">
-                <div class="card review-card reveal">
-                    <div class="stars">★★★★★</div>
-                    <p>"Всё пришло за секунду! Теперь покупаю только тут."</p>
-                    <span class="author">- @User_Pro</span>
-                </div>
-                <div class="card review-card reveal">
-                    <div class="stars">★★★★★</div>
-                    <p>"Самые дешевые куки, которые я находил. Рекомендую!"</p>
-                    <span class="author">- @Legenda_RB</span>
-                </div>
-                <div class="card review-card reveal">
-                    <div class="stars">★★★★★</div>
-                    <p>"Поддержка помогла разобраться, отличный сервис."</p>
-                    <span class="author">- @CookieLover</span>
-                </div>
+            <h2>Часто задаваемые вопросы</h2>
+            <div class="faq-item reveal">
+                <div class="faq-question">Как быстро я получу товар?</div>
+                <div class="faq-answer">После оплаты в боте, ссылка на Cookies выдается моментально в автоматическом режиме.</div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-question">Это безопасно для моего аккаунта?</div>
+                <div class="faq-answer">Да, мы используем только чистые методы получения, что минимизирует любые риски.</div>
             </div>
         </div>
     </section>
@@ -110,8 +87,6 @@
     </footer>
 
     <div id="notification-container"></div>
-
     <script src="script.js"></script>
-
 </body>
 </html>
