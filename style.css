@@ -277,3 +277,15 @@ footer {
 body {
     background-image: radial-gradient(circle at 50% 50%, #1a1a3a 0%, #0f0c29 100%);
 }
+/* Начальное состояние блоков для анимации */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+/* Состояние после появления */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
