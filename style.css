@@ -1,50 +1,82 @@
-/* Исправленный блок проверки */
-.checker { 
-    padding: 60px 0; 
-}
-
-.check-box { 
-    background: rgba(26, 26, 46, 0.8); 
-    padding: 40px; 
-    border-radius: 20px; 
-    border: 1px solid #00d2ff;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-    box-shadow: 0 0 20px rgba(0, 210, 255, 0.1);
-}
-
-.check-box h3 {
-    margin-bottom: 25px;
-    font-size: 22px;
-}
-
-.input-group {
-    display: flex;
-    justify-content: center;
-    gap: 10px; /* Расстояние между полем и кнопкой */
-    flex-wrap: wrap; /* Чтобы на телефонах кнопка переносилась вниз */
-}
-
-.check-box input { 
-    padding: 12px 20px; 
-    border-radius: 8px; 
-    border: 1px solid #333; 
-    background: #0f0c29;
+/* Общие стили */
+body {
+    margin: 0; padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #050510;
     color: white;
-    width: 250px;
-    outline: none;
-    transition: 0.3s;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
-.check-box input:focus {
-    border-color: #00d2ff;
-    box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* Анимация появления */
+.reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* Шапка */
+header { 
+    background: rgba(5, 5, 16, 0.95); 
+    height: 80px; 
+    display: flex; 
+    align-items: center; 
+    position: sticky; 
+    top: 0; 
+    z-index: 100;
+    border-bottom: 1px solid #1a1a2e;
 }
 
-#check-result { 
-    margin-top: 20px; 
-    min-height: 24px; /* Чтобы текст не "прыгал" при появлении */
-    font-weight: bold; 
-    transition: 0.3s;
+header .container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.logo { font-size: 24px; font-weight: bold; }
+.logo span { color: #00d2ff; }
+
+/* Кнопки */
+.btn-header, .btn-buy { 
+    background: #00d2ff; color: #000; text-decoration: none; 
+    padding: 12px 24px; border-radius: 8px; font-weight: bold; 
+    transition: 0.3s; border: none; cursor: pointer;
 }
+.btn-header:hover, .btn-buy:hover { background: #3a7bd5; color: #fff; box-shadow: 0 0 15px #00d2ff; }
+
+.btn-main { 
+    display: inline-block; padding: 14px 35px; border: 2px solid #00d2ff; 
+    color: #fff; text-decoration: none; border-radius: 30px; transition: 0.3s;
+}
+.btn-main:hover { background: #00d2ff; color: #000; }
+
+/* Главный экран */
+.hero { text-align: center; padding: 120px 0; background: radial-gradient(circle at center, #1a1a3a 0%, #050510 100%); }
+.hero h1 { font-size: 42px; margin-bottom: 20px; }
+.stock-status { display: inline-block; border: 1px solid #00d2ff; padding: 10px 20px; border-radius: 50px; font-size: 14px; background: rgba(0, 210, 255, 0.05); }
+.dot { height: 10px; width: 10px; background: #00ff88; border-radius: 50%; display: inline-block; margin-right: 8px; box-shadow: 0 0 10px #00ff88; }
+
+/* Блок проверки (ФИКС) */
+.checker { padding: 60px 0; }
+.check-box { background: #1a1a2e; padding: 40px; border-radius: 20px; border: 1px solid #333; max-width: 600px; margin: 0 auto; text-align: center; }
+.input-group { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+.check-box input { padding: 12px 15px; border-radius: 8px; border: 1px solid #444; background: #050510; color: #fff; width: 250px; outline: none; }
+.check-box input:focus { border-color: #00d2ff; }
+#check-result { margin-top: 20px; min-height: 20px; font-size: 14px; }
+
+/* Цены */
+.section-title { text-align: center; margin-bottom: 40px; font-size: 32px; }
+.price-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+.price-item { background: #1a1a2e; padding: 40px 20px; border-radius: 20px; width: 280px; text-align: center; border: 1px solid #333; position: relative; }
+.price-item.featured { border-color: #00d2ff; transform: scale(1.05); }
+.badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #00d2ff; color: #000; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: bold; }
+.amount { font-size: 28px; font-weight: bold; margin: 15px 0; }
+.cost { color: #00d2ff; font-size: 22px; margin-bottom: 20px; }
+
+/* FAQ */
+.faq { padding: 80px 0; }
+.faq-list { max-width: 700px; margin: 0 auto; }
+.faq-item { background: #1a1a2e; padding: 20px; border-radius: 12px; margin-bottom: 15px; border: 1px solid #333; }
+.faq-question { color: #00d2ff; font-weight: bold; }
+.faq-answer { margin-top: 10px; font-size: 14px; color: #aaa; }
+
+/* Уведомления */
+#notification-container { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
+.notification { background: #1a1a2e; border-left: 4px solid #00d2ff; padding: 15px 25px; border-radius: 8px; margin-top: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); animation: slideIn 0.5s ease; }
+@keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
+
+footer { text-align: center; padding: 40px; border-top: 1px solid #1a1a2e; color: #555; }
