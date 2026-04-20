@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MineLauncher — Главная</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- SEARCH OVERLAY -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-backdrop" id="searchBackdrop"></div>
+    <div class="search-modal">
+      <div class="search-modal-top">
+        <div class="logo" style="flex-shrink:0">
+          <a href="index.html" class="logo-link">
+            <span class="logo-white">Mine</span><span class="logo-blue">Launcher</span>
+          </a>
+          <span class="lang-badge">RU</span>
+        </div>
+        <div class="search-input-wrap">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+          <input type="text" class="search-input-real" id="searchInput" placeholder="Поиск по сайту" autocomplete="off" />
+        </div>
+        <button class="search-close-btn" id="searchClose" aria-label="Закрыть поиск">✕</button>
+        <a href="download.html" class="btn-install">Установить приложение ⊕</a>
+      </div>
+
+      <p class="search-popular-label">Популярные запросы:</p>
+      <div class="search-popular-list">
+        <div class="search-popular-item" onclick="document.getElementById('searchInput').value=this.querySelector('span').textContent">
+          <span>Как скачать MineLauncher?</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+        <div class="search-popular-item" onclick="document.getElementById('searchInput').value=this.querySelector('span').textContent">
+          <span>Как получить сервера для MineLauncher?</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+        <div class="search-popular-item" onclick="document.getElementById('searchInput').value=this.querySelector('span').textContent">
+          <span>Тех. поддержка MineLauncher</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+      </div>
+
+      <div class="search-quick-links">
+        <a href="#" class="search-quick-link tg">
+          Telegram канал
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" class="ext-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        <a href="#" class="search-quick-link support">
+          Тех. поддержка
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" class="ext-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        <a href="#" class="search-quick-link faq">
+          FAQ
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" class="ext-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="logo">
+        <a href="index.html" class="logo-link">
+          <span class="logo-white">Mine</span><span class="logo-blue">Launcher</span>
+        </a>
+        <span class="lang-badge">RU</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link active">Главная</a>
+        <a href="news.html" class="nav-link">Новости</a>
+        <a href="versions.html" class="nav-link">Версии</a>
+      </nav>
+
+      <div class="search-bar" id="searchTrigger">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22" style="flex-shrink:0;opacity:0.6">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <span class="search-placeholder">Поиск по сайту</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="skins.html" class="nav-link">Скины</a>
+        <a href="mods.html" class="nav-link">Моды</a>
+        <a href="servers.html" class="nav-link">Сервера</a>
+      </nav>
+
+      <a href="download.html" class="btn-install">Установить приложение ⊕</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-card">
+        <img src="https://www.figma.com/api/mcp/asset/09859c5f-ac34-4230-9eff-515f8e418f53" alt="hero bg" class="hero-bg" />
+        <div class="hero-content">
+          <h1 class="hero-title">Встречайте лаунчер<br />нового поколения</h1>
+          <p class="hero-subtitle">
+            Все версии майнкрафта, моды, скины,<br />
+            эксклюзивные сборки и ещё много всего<br />
+            в одном приложении
+          </p>
+          <a href="download.html" class="btn-download">
+            <img src="https://www.figma.com/api/mcp/asset/7cfc66c7-f8ed-4686-be46-327e71aa7baf" alt="windows" class="win-icon" />
+            Скачать лаунчер
+          </a>
+        </div>
+        <img src="https://www.figma.com/api/mcp/asset/bc81e576-1cc2-460d-bf1f-75995eeba0f9" alt="character" class="hero-character" />
+      </div>
+    </section>
+
+    <!-- NEWS -->
+    <section class="section" id="news">
+      <h2 class="section-title">Новости и обновления</h2>
+      <div class="news-grid">
+        <article class="news-card">
+          <span class="news-date">16.06.24</span>
+          <div class="news-divider"></div>
+          <p class="news-content">CONTENT</p>
+        </article>
+        <article class="news-card">
+          <span class="news-date">10.06.24</span>
+          <div class="news-divider"></div>
+          <p class="news-content">CONTENT</p>
+        </article>
+        <article class="news-card">
+          <span class="news-date">30.05.24</span>
+          <div class="news-divider"></div>
+          <p class="news-content">CONTENT</p>
+        </article>
+        <article class="news-card">
+          <span class="news-date">28.05.24</span>
+          <div class="news-divider"></div>
+          <p class="news-content">CONTENT</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- VERSIONS -->
+    <section class="section" id="versions">
+      <div class="section-header">
+        <h2 class="section-title">Версии</h2>
+        <a href="versions.html" class="link-all">
+          Перейти ко всем
+          <img src="https://www.figma.com/api/mcp/asset/7e0bceab-8507-4c3c-b27e-5993dca87bb2" alt="arrow" class="arrow-icon" />
+        </a>
+      </div>
+      <div class="versions-grid">
+        <div class="version-card">
+          <img src="https://www.figma.com/api/mcp/asset/a3c7c99f-4bff-4b34-8c7f-bfe12dfe2f2e" alt="version bg" class="version-bg" />
+          <span class="version-badge">Новейшая</span>
+          <span class="version-number">1.21</span>
+        </div>
+        <div class="version-card">
+          <img src="https://www.figma.com/api/mcp/asset/a52b8140-4f52-4e6e-b565-80d8ab21fbb8" alt="version bg" class="version-bg" />
+          <span class="version-badge">Актуальная</span>
+          <span class="version-number">1.20.2</span>
+        </div>
+        <div class="version-card">
+          <img src="https://www.figma.com/api/mcp/asset/7dd2d8e0-b506-4c45-a468-8ce8c8bc5119" alt="version bg" class="version-bg" />
+          <span class="version-badge">Лучшая</span>
+          <span class="version-number">1.12.2</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKINS -->
+    <section class="section" id="skins">
+      <div class="section-header">
+        <h2 class="section-title">Скины</h2>
+        <a href="skins.html" class="link-all">
+          Перейти ко всем
+          <img src="https://www.figma.com/api/mcp/asset/7e0bceab-8507-4c3c-b27e-5993dca87bb2" alt="arrow" class="arrow-icon" />
+        </a>
+      </div>
+      <div class="skins-grid">
+        <div class="skin-card">
+          <div class="skin-img-wrap">
+            <img src="https://www.figma.com/api/mcp/asset/613697a2-fa1b-4ebc-b32e-96c97f2eee16" alt="skin" class="skin-img" />
+          </div>
+          <a href="#" class="btn-skin">Скачать скин</a>
+        </div>
+        <div class="skin-card">
+          <div class="skin-img-wrap">
+            <img src="https://www.figma.com/api/mcp/asset/897c9053-8969-4731-b33e-eea27b33c669" alt="skin" class="skin-img" />
+          </div>
+          <a href="#" class="btn-skin">Скачать скин</a>
+        </div>
+        <div class="skin-card">
+          <div class="skin-img-wrap">
+            <img src="https://www.figma.com/api/mcp/asset/318a6684-8b12-4404-8be3-3b023a2b06d3" alt="skin" class="skin-img" />
+          </div>
+          <a href="#" class="btn-skin">Скачать скин</a>
+        </div>
+        <div class="skin-card">
+          <div class="skin-img-wrap">
+            <img src="https://www.figma.com/api/mcp/asset/1e91d02e-8609-436f-84c1-8c9474c04ca1" alt="skin" class="skin-img" />
+          </div>
+          <a href="#" class="btn-skin">Скачать скин</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="logo">
+        <span class="logo-white">Mine</span><span class="logo-blue">Launcher</span>
+        <span class="lang-badge">RU</span>
+      </div>
+      <nav class="footer-links">
+        <a href="index.html">Главная</a>
+        <a href="news.html">Новости</a>
+        <a href="versions.html">Версии</a>
+        <a href="skins.html">Скины</a>
+        <a href="mods.html">Моды</a>
+        <a href="servers.html">Сервера</a>
+        <a href="download.html">Скачать</a>
+      </nav>
+      <p class="footer-copy">© 2024 MineLauncher. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="search.js"></script>
+</body>
+</html>

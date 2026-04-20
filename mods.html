@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MineLauncher — Моды</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-backdrop" id="searchBackdrop"></div>
+    <div class="search-modal">
+      <div class="search-modal-top">
+        <div class="logo" style="flex-shrink:0">
+          <a href="index.html" class="logo-link"><span class="logo-white">Mine</span><span class="logo-blue">Launcher</span></a>
+          <span class="lang-badge">RU</span>
+        </div>
+        <div class="search-input-wrap">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" class="search-input-real" id="searchInput" placeholder="Поиск по сайту" autocomplete="off" />
+        </div>
+        <button class="search-close-btn" id="searchClose">✕</button>
+        <a href="download.html" class="btn-install">Установить приложение ⊕</a>
+      </div>
+      <p class="search-popular-label">Популярные запросы:</p>
+      <div class="search-popular-list">
+        <div class="search-popular-item" onclick="document.getElementById('searchInput').value=this.querySelector('span').textContent"><span>Как скачать MineLauncher?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg></div>
+        <div class="search-popular-item" onclick="document.getElementById('searchInput').value=this.querySelector('span').textContent"><span>Как получить сервера для MineLauncher?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg></div>
+        <div class="search-popular-item" onclick="document.getElementById('searchInput').value=this.querySelector('span').textContent"><span>Тех. поддержка MineLauncher</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg></div>
+      </div>
+      <div class="search-quick-links">
+        <a href="#" class="search-quick-link tg">Telegram канал <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+        <a href="#" class="search-quick-link support">Тех. поддержка <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+        <a href="#" class="search-quick-link faq">FAQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="logo">
+        <a href="index.html" class="logo-link"><span class="logo-white">Mine</span><span class="logo-blue">Launcher</span></a>
+        <span class="lang-badge">RU</span>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="news.html" class="nav-link">Новости</a>
+        <a href="versions.html" class="nav-link">Версии</a>
+      </nav>
+      <div class="search-bar" id="searchTrigger">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22" style="flex-shrink:0;opacity:0.6"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <span class="search-placeholder">Поиск по сайту</span>
+      </div>
+      <nav class="nav-links">
+        <a href="skins.html" class="nav-link">Скины</a>
+        <a href="mods.html" class="nav-link active">Моды</a>
+        <a href="servers.html" class="nav-link">Сервера</a>
+      </nav>
+      <a href="download.html" class="btn-install">Установить приложение ⊕</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <h1>Моды</h1>
+      <p>Расширь возможности Minecraft с лучшими модификациями</p>
+    </div>
+
+    <section class="section">
+      <div class="mods-filters">
+        <button class="mod-filter-btn active" onclick="filterMods(this, 'all')">Все</button>
+        <button class="mod-filter-btn" onclick="filterMods(this, 'gameplay')">Геймплей</button>
+        <button class="mod-filter-btn" onclick="filterMods(this, 'graphics')">Графика</button>
+        <button class="mod-filter-btn" onclick="filterMods(this, 'tech')">Технологии</button>
+        <button class="mod-filter-btn" onclick="filterMods(this, 'magic')">Магия</button>
+        <button class="mod-filter-btn" onclick="filterMods(this, 'util')">Утилиты</button>
+      </div>
+
+      <div class="mods-grid">
+        <div class="mod-card" data-cat="graphics">
+          <div class="mod-thumb">🌄</div>
+          <div class="mod-body">
+            <div class="mod-name">Optifine</div>
+            <div class="mod-desc">Оптимизация графики, поддержка шейдеров и текстурных пакетов высокого разрешения. Must-have для каждого игрока.</div>
+            <div class="mod-footer">
+              <div class="mod-versions"><span class="mod-version-tag">1.20</span><span class="mod-version-tag">1.21</span></div>
+              <a href="#" class="btn-mod-download">⬇ Скачать</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mod-card" data-cat="tech">
+          <div class="mod-thumb">⚙️</div>
+          <div class="mod-body">
+            <div class="mod-name">Create</div>
+            <div class="mod-desc">Механизмы, шестерёнки, конвейеры и сложные устройства. Строй заводы и автоматизируй всё что угодно.</div>
+            <div class="mod-footer">
+              <div class="mod-versions"><span class="mod-version-tag">1.19</span><span class="mod-version-tag">1.20</span></div>
+              <a href="#" class="btn-mod-download">⬇ Скачать</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mod-card" data-cat="magic">
+          <div class="mod-thumb">✨</div>
+          <div class="mod-body">
+            <div class="mod-name">Botania</div>
+            <div class="mod-desc">Магия природы и цветов. Создавай зачарованные устройства, используя силу растений и мана-пула.</div>
+            <div class="mod-footer">
+              <div class="mod-versions"><span class="mod-version-tag">1.19</span><span class="mod-version-tag">1.20</span></div>
+              <a href="#" class="btn-mod-download">⬇ Скачать</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mod-card" data-cat="gameplay">
+          <div class="mod-thumb">🗺️</div>
+          <div class="mod-body">
+            <div class="mod-name">Journey Map</div>
+            <div class="mod-desc">Полноэкранная мини-карта в реальном времени. Ставь метки, исследуй мир и никогда не теряйся.</div>
+            <div class="mod-footer">
+              <div class="mod-versions"><span class="mod-version-tag">1.20</span><span class="mod-version-tag">1.21</span></div>
+              <a href="#" class="btn-mod-download">⬇ Скачать</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mod-card" data-cat="util">
+          <div class="mod-thumb">🔧</div>
+          <div class="mod-body">
+            <div class="mod-name">Just Enough Items</div>
+            <div class="mod-desc">Просматривай рецепты крафта и использование любого предмета прямо в игре. Незаменим при игре с модпаками.</div>
+            <div class="mod-footer">
+              <div class="mod-versions"><span class="mod-version-tag">1.19</span><span class="mod-version-tag">1.21</span></div>
+              <a href="#" class="btn-mod-download">⬇ Скачать</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mod-card" data-cat="gameplay">
+          <div class="mod-thumb">🐉</div>
+          <div class="mod-body">
+            <div class="mod-name">Alex's Mobs</div>
+            <div class="mod-desc">Более 80 новых мобов с уникальным поведением, дропом и механиками взаимодействия. Мир стал живее!</div>
+            <div class="mod-footer">
+              <div class="mod-versions"><span class="mod-version-tag">1.19</span><span class="mod-version-tag">1.20</span></div>
+              <a href="#" class="btn-mod-download">⬇ Скачать</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="logo"><span class="logo-white">Mine</span><span class="logo-blue">Launcher</span><span class="lang-badge">RU</span></div>
+      <nav class="footer-links">
+        <a href="index.html">Главная</a><a href="news.html">Новости</a><a href="versions.html">Версии</a>
+        <a href="skins.html">Скины</a><a href="mods.html">Моды</a><a href="servers.html">Сервера</a><a href="download.html">Скачать</a>
+      </nav>
+      <p class="footer-copy">© 2024 MineLauncher. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="search.js"></script>
+  <script>
+    function filterMods(btn, cat) {
+      document.querySelectorAll('.mod-filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.mod-card').forEach(card => {
+        if (cat === 'all' || card.dataset.cat === cat) {
+          card.style.display = '';
+          card.style.animation = 'fadeUp 0.3s ease both';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

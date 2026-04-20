@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MineLauncher — Скачать</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-backdrop" id="searchBackdrop"></div>
+    <div class="search-modal">
+      <div class="search-modal-top">
+        <div class="logo" style="flex-shrink:0">
+          <a href="index.html" class="logo-link"><span class="logo-white">Mine</span><span class="logo-blue">Launcher</span></a>
+          <span class="lang-badge">RU</span>
+        </div>
+        <div class="search-input-wrap">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" class="search-input-real" id="searchInput" placeholder="Поиск по сайту" autocomplete="off" />
+        </div>
+        <button class="search-close-btn" id="searchClose">✕</button>
+        <a href="download.html" class="btn-install">Установить приложение ⊕</a>
+      </div>
+      <p class="search-popular-label">Популярные запросы:</p>
+      <div class="search-popular-list">
+        <div class="search-popular-item" onclick="document.getElementById('searchInput').value=this.querySelector('span').textContent"><span>Как скачать MineLauncher?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg></div>
+        <div class="search-popular-item" onclick="document.getElementById('searchInput').value=this.querySelector('span').textContent"><span>Как получить сервера для MineLauncher?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg></div>
+        <div class="search-popular-item" onclick="document.getElementById('searchInput').value=this.querySelector('span').textContent"><span>Тех. поддержка MineLauncher</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg></div>
+      </div>
+      <div class="search-quick-links">
+        <a href="#" class="search-quick-link tg">Telegram канал <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+        <a href="#" class="search-quick-link support">Тех. поддержка <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+        <a href="#" class="search-quick-link faq">FAQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="logo">
+        <a href="index.html" class="logo-link"><span class="logo-white">Mine</span><span class="logo-blue">Launcher</span></a>
+        <span class="lang-badge">RU</span>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="news.html" class="nav-link">Новости</a>
+        <a href="versions.html" class="nav-link">Версии</a>
+      </nav>
+      <div class="search-bar" id="searchTrigger">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22" style="flex-shrink:0;opacity:0.6"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <span class="search-placeholder">Поиск по сайту</span>
+      </div>
+      <nav class="nav-links">
+        <a href="skins.html" class="nav-link">Скины</a>
+        <a href="mods.html" class="nav-link">Моды</a>
+        <a href="servers.html" class="nav-link">Сервера</a>
+      </nav>
+      <a href="download.html" class="btn-install active-install">Установить приложение ⊕</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="download-hero">
+      <h1>Скачать MineLauncher</h1>
+      <p>Бесплатный лаунчер нового поколения для всех версий Minecraft. Установи и запускай игру в один клик.</p>
+      <p class="download-version-info">Актуальная версия: <span>v3.2.1</span> &nbsp;|&nbsp; Дата выпуска: <span>16.06.2024</span></p>
+    </div>
+
+    <div class="download-platforms">
+      <div class="platform-card primary">
+        <div class="platform-icon">🪟</div>
+        <div class="platform-name">Windows</div>
+        <div class="platform-info">Windows 10 / 11<br />64-bit, требуется Java 17+</div>
+        <a href="#" class="btn-platform-download">
+          ⬇ Скачать для Windows
+        </a>
+        <div style="font-size:13px;color:var(--white-dim);">~48 МБ · .exe установщик</div>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-icon">🍎</div>
+        <div class="platform-name">macOS</div>
+        <div class="platform-info">macOS 12 Monterey и выше<br />Apple Silicon и Intel</div>
+        <a href="#" class="btn-platform-download secondary">
+          ⬇ Скачать для macOS
+        </a>
+        <div style="font-size:13px;color:var(--white-dim);">~52 МБ · .dmg образ</div>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-icon">🐧</div>
+        <div class="platform-name">Linux</div>
+        <div class="platform-info">Ubuntu, Debian, Fedora<br />AppImage / .deb / .rpm</div>
+        <a href="#" class="btn-platform-download secondary">
+          ⬇ Скачать для Linux
+        </a>
+        <div style="font-size:13px;color:var(--white-dim);">~45 МБ · AppImage</div>
+      </div>
+    </div>
+
+    <div class="download-features">
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <div class="feature-title">Быстрый запуск</div>
+        <div class="feature-desc">Оптимизированный загрузчик запускает игру в 2 раза быстрее стандартного лаунчера. Меньше ожидания — больше игры.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <div class="feature-title">Безопасность</div>
+        <div class="feature-desc">Официальные файлы игры, проверка целостности при каждом запуске. Никаких вирусов и нежелательного ПО.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎨</div>
+        <div class="feature-title">Все версии</div>
+        <div class="feature-desc">От старинной Beta 1.7.3 до самой новой 1.21 — все версии доступны в лаунчере без лишних сложностей.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🧩</div>
+        <div class="feature-title">Моды в один клик</div>
+        <div class="feature-desc">Устанавливай Forge, Fabric и популярные моды прямо из лаунчера без ручной настройки файлов.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌐</div>
+        <div class="feature-title">Сервера</div>
+        <div class="feature-desc">Встроенный список популярных серверов с информацией об онлайне и быстрым подключением.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔄</div>
+        <div class="feature-title">Автообновление</div>
+        <div class="feature-desc">Лаунчер обновляется автоматически в фоне. Ты всегда используешь актуальную версию без лишних действий.</div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="logo"><span class="logo-white">Mine</span><span class="logo-blue">Launcher</span><span class="lang-badge">RU</span></div>
+      <nav class="footer-links">
+        <a href="index.html">Главная</a><a href="news.html">Новости</a><a href="versions.html">Версии</a>
+        <a href="skins.html">Скины</a><a href="mods.html">Моды</a><a href="servers.html">Сервера</a><a href="download.html">Скачать</a>
+      </nav>
+      <p class="footer-copy">© 2024 MineLauncher. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="search.js"></script>
+</body>
+</html>
